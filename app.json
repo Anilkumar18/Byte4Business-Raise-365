@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Raise-365",
+    "slug": "raise-365",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icons.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "bundleIdentifier": "com.raise365",
+      "buildNumber": "1",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.application.raise365",
+      "versionCode": 1
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+    }
+  }
+}
