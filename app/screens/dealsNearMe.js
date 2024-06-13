@@ -158,7 +158,7 @@ const DealsNearScreen = (props) => {
             width: wp("90%"),
             marginLeft: wp("5%"),
             justifyContent: "space-between",
-            // alignItems: 'center',
+             alignItems: 'center',
             marginTop: Platform.OS === "ios" ? hp("5%") : hp("3%"),
           }}>
 
@@ -169,8 +169,8 @@ const DealsNearScreen = (props) => {
             >
               <Image
                 style={{
-                  // marginTop: hp("5"),
-                  // left: 20,
+                   marginTop: hp("5"),
+                   left: 20,
                 }}
                 source={require("../assets/back.png")}
               />
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     marginTop: hp("2%"),
     width: width * 0.9,
     padding: 5,
-    // height: width * 0.8 * 0.35,
+     height: width * 0.8 * 0.35,
   },
 
   inputStyle: {
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
-    // height: Theme.textInputHeight,
+     height: Theme.textInputHeight,
     backgroundColor: "#ececec",
     width: "85%",
   },

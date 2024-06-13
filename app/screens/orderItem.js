@@ -49,7 +49,7 @@ const OrderItemScreen = (props) => {
   const [notes, setNotes] = useState('')
 
 
-  // console.log('order item modifiers', modifiers);
+   console.log('order item modifiers', modifiers);
   console.log('order item', item, business);
 
   const increase = () => {
@@ -263,7 +263,7 @@ const OrderItemScreen = (props) => {
           <View style={{
             flex: 1,
             padding: 20,
-            // borderRadius: 25
+             borderRadius: 25
           }}>
 
             {renderHeader()}
@@ -271,7 +271,7 @@ const OrderItemScreen = (props) => {
             <View style={{
               flex: 1,
               backgroundColor: 'transparent',
-              // borderRadius: 25,
+               borderRadius: 25,
             }}>
               <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView
@@ -287,11 +287,11 @@ const OrderItemScreen = (props) => {
                     <View
                       style={{
                         flex: 1,
-                        // paddingBottom: 20,
+                         paddingBottom: 20,
                         backgroundColor: "transparent",
-                        // borderRadius: 25,
-                        // marginTop: 15,
-                        // alignSelf: "center",
+                         borderRadius: 25,
+                         marginTop: 15,
+                         alignSelf: "center",
                       }}
                     >
 
@@ -305,7 +305,7 @@ const OrderItemScreen = (props) => {
                             borderTopRightRadius: 25,
                             resizeMode: "stretch",
                             alignSelf: 'center',
-                            // backgroundColor: 'transparent'
+                             backgroundColor: 'transparent'
                           }}
                           source={renderImage(item.images)}
                         />
@@ -355,11 +355,11 @@ const OrderItemScreen = (props) => {
                           style={{
                             flexDirection: "row",
                             backgroundColor: "#e6e6e6",
-                            // height: height * 0.07,
+                             height: height * 0.07,
                             marginTop: height * 0.01,
                             padding: 10,
-                            // width: width * 0.83,
-                            // alignSelf: "center",
+                             width: width * 0.83,
+                             alignSelf: "center",
                             borderTopLeftRadius: 5,
                             borderTopRightRadius: 5,
                           }}
@@ -436,14 +436,14 @@ const OrderItemScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "grey",
+    backgroundColor: "grey",
   },
   inputSearchStyle: {
-    // marginLeft: 10,
+     marginLeft: 10,
     backgroundColor: "#e6e6e6",
     padding: 7,
-    // marginTop: height * 0.02,
-    // width: width * 0.85,
+     marginTop: height * 0.02,
+     width: width * 0.85,
     color: "#051533",
     fontFamily: "Nunito-Regular",
     fontSize: height * 0.02,
@@ -474,7 +474,7 @@ const styles = StyleSheet.create({
   separator: {
     backgroundColor: "lightgrey",
     height: 1,
-    // marginTop: height * 0.015,
+     marginTop: height * 0.015,
     marginVertical: 15,
     width: width * 0.83,
     alignSelf: "center",

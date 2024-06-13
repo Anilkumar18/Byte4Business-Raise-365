@@ -70,7 +70,7 @@ const Button = ({
     borderRadius: 20,
     height: 40,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: "black",
     shadowOpacity: 0.5,
@@ -159,7 +159,7 @@ const PopupPrize = ({ value, onChange, onClose }) => {
     const inputStyle = {
       flex: 1,
       borderWidth: 1,
-      // marginBottom: 10,
+       marginBottom: 10,
       paddingVertical: 5,
       paddingHorizontal: 10,
       fontSize: 16,
@@ -469,10 +469,10 @@ const FundraiserPrizesScreen = (props) => {
       >
         <View
           style={{
-            // paddingLeft: 20,
+             paddingLeft: 20,
             paddingTop: 15,
             height: 80,
-            // alignItems: 'center',
+             alignItems: 'center',
           }}
         >
           <View
@@ -538,9 +538,9 @@ const FundraiserPrizesScreen = (props) => {
   };
 
   const renderPrizeCustomFields = (prize, prizeIndex) => {
-    // if (!prize.put_name || !prize.put_number) {
-    //   return null
-    // }
+     if (!prize.put_name || !prize.put_number) {
+       return null
+     }
 
     return (
       <View
@@ -599,7 +599,7 @@ const FundraiserPrizesScreen = (props) => {
   };
 
   const renderPrize = (prize, prizeIndex) => {
-    // console.log('renderprize', prize.selected_option)
+     console.log('renderprize', prize.selected_option)
 
     const imageStyle = {
       flex: 1,
@@ -709,14 +709,14 @@ const FundraiserPrizesScreen = (props) => {
       return null;
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current);
-    const progressMax = Number(fundraiser.card_goal);
+//    const progressValue = Number(fundraiser.current);
+//    const progressMax = Number(fundraiser.card_goal);
 
     return (
       <ProgressBar
@@ -756,7 +756,7 @@ const FundraiserPrizesScreen = (props) => {
                 style={{
                   width: 40,
                   height: 40,
-                  // borderRadius: 15,
+                   borderRadius: 15,
                   marginRight: 10,
                   alignSelf: "center",
                   backgroundColor: "#ccc",

@@ -95,7 +95,7 @@ const Button = ({
     borderRadius: 10,
     height: 40,
     backgroundColor: "black",
-    // width: "100%",
+     width: "100%",
     flex: 1,
     marginHorizontal: 6,
     ...buttonStyle,
@@ -105,7 +105,7 @@ const Button = ({
       style={{
         flex: 1,
         flexDirection: "row",
-        // alignItems: 'center',
+        alignItems: 'center',
         paddingVertical: 10,
         ...containerStyle,
       }}
@@ -603,9 +603,9 @@ const FundraiserLeaderboardScreen = (props) => {
 
     setFundraiserGroups(updatedFundraiserGroups);
 
-    // if (!pressedDetail.expanded && _.isEmpty(pressedDetail.stats)) {
-    //   loadDetailStats(group, pressedDetail, updatedFundraiserGroups)
-    // }
+     if (!pressedDetail.expanded && _.isEmpty(pressedDetail.stats)) {
+       loadDetailStats(group, pressedDetail, updatedFundraiserGroups)
+     }
   };
 
   const onCustomerPress = (pressedCustomer) => {
@@ -880,10 +880,10 @@ const FundraiserLeaderboardScreen = (props) => {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
-              // borderTopWidth: 0.5,
-              // borderTopColor: 'gray',
+               borderTopWidth: 0.5,
+               borderTopColor: 'gray',
               paddingVertical: 5,
-              // marginLeft: 24,
+              marginLeft: 24,
             }}
           >
             <View style={{ flex: 1 }}>
@@ -916,10 +916,10 @@ const FundraiserLeaderboardScreen = (props) => {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
-              // borderTopWidth: 0.5,
-              // borderTopColor: 'gray',
+               borderTopWidth: 0.5,
+               borderTopColor: 'gray',
               paddingVertical: 5,
-              // marginLeft: 24,
+               marginLeft: 24,
             }}
           >
             <View style={{ flex: 1 }}>
@@ -986,10 +986,10 @@ const FundraiserLeaderboardScreen = (props) => {
             style={{
               borderTopWidth: index == 0 ? 0 : 0.5,
               borderTopColor: "gray",
-              // borderBottomWidth: 0.5,
-              // borderBottomColor: 'gray',
+               borderBottomWidth: 0.5,
+               borderBottomColor: 'gray',
               paddingVertical: 5,
-              // marginVertical: 10
+               marginVertical: 10
             }}
           >
             {group.template != "Donation Campaign" && (
@@ -1014,7 +1014,7 @@ const FundraiserLeaderboardScreen = (props) => {
                       borderWidth: 1,
                       borderColor: "#051533",
                       marginRight: 10,
-                      // marginTop: 4,
+                       marginTop: 4,
                     }}
                   >
                     <MaterialC name="currency-usd" color="#051533" />
@@ -1071,10 +1071,10 @@ const FundraiserLeaderboardScreen = (props) => {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  // borderTopWidth: 0.5,
-                  // borderTopColor: 'gray',
+                   borderTopWidth: 0.5,
+                   borderTopColor: 'gray',
                   paddingVertical: 5,
-                  // marginLeft: 24,
+                   marginLeft: 24,
                 }}
               >
                 <View
@@ -1107,10 +1107,10 @@ const FundraiserLeaderboardScreen = (props) => {
                   flexDirection: "row",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  // borderTopWidth: 0.5,
-                  // borderTopColor: 'gray',
+                   borderTopWidth: 0.5,
+                   borderTopColor: 'gray',
                   paddingVertical: 5,
-                  // marginLeft: 24,
+                   marginLeft: 24,
                 }}
               >
                 <View
@@ -1165,12 +1165,12 @@ const FundraiserLeaderboardScreen = (props) => {
       <View key={index}>
         <View
           style={{
-            // borderTopWidth: (index == 0) ? 0 : 0.5,
+             borderTopWidth: (index == 0) ? 0 : 0.5,
             borderTopColor: "gray",
-            // borderBottomWidth: 0.5,
-            // borderBottomColor: 'gray',
+             borderBottomWidth: 0.5,
+             borderBottomColor: 'gray',
             paddingVertical: 5,
-            // marginVertical: 10
+             marginVertical: 10
           }}
         >
           <View style={rowStyle}>
@@ -1575,7 +1575,7 @@ const FundraiserLeaderboardScreen = (props) => {
                         marginVertical: 5,
                         alignItems: "center",
                         alignSelf: "center",
-                        // justifyContent: 'center'
+                         justifyContent: 'center'
                       }}
                     >
                       <Text
@@ -1604,7 +1604,7 @@ const FundraiserLeaderboardScreen = (props) => {
                         marginVertical: 5,
                         alignItems: "center",
                         alignSelf: "center",
-                        // justifyContent: 'center'
+                         justifyContent: 'center'
                       }}
                     >
                       <Text
@@ -1757,13 +1757,13 @@ const FundraiserLeaderboardScreen = (props) => {
       return null;
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, {id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, {id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, {id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, {id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
-    const progressValue = Number(fundraiser.current);
-    const progressMax = Number(fundraiser.card_goal);
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+    //const progressValue = Number(fundraiser.current);
+    //const progressMax = Number(fundraiser.card_goal);
 
     return (
       <ProgressBar
@@ -1799,7 +1799,7 @@ const FundraiserLeaderboardScreen = (props) => {
           style={{
             width: 40,
             height: 40,
-            // borderRadius: 15,
+             borderRadius: 15,
             marginRight: 10,
             alignSelf: "center",
             backgroundColor: "#ccc",

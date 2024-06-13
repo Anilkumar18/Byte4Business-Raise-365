@@ -60,7 +60,7 @@ const ProductDetailScreen = (props) => {
     (async () => {
       try {
         setMenuItem(props.route.params.data)
-        // locationId
+         locationId
         let resp = await extraApiService.getAllMenuItemRatings(props.route.params.data.location_id,
           props.route.params.data.id)
         console.log('extraApiService.getAllMenuItemRatings', resp.data);
@@ -213,7 +213,7 @@ const ProductDetailScreen = (props) => {
       <View style={{
         width: width * 0.38,
         height: width * 0.38,
-        // height: Math.round(width * 6.4) / 16,
+         height: Math.round(width * 6.4) / 16,
         alignSelf: "center",
         justifyContent: "center",
         marginTop: height * 0.01,
@@ -238,7 +238,7 @@ const ProductDetailScreen = (props) => {
       <View style={{}}>
         <TouchableOpacity
           onPress={() => {
-            // props.navigation.pop();
+             props.navigation.pop();
           }}
           disabled={submitting}
         >
@@ -568,7 +568,7 @@ const ProductDetailScreen = (props) => {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          // marginTop: height * 0.04,
+           marginTop: height * 0.04,
           marginTop: 20,
           width: width * 0.9,
           alignSelf: "center",
@@ -602,7 +602,7 @@ const ProductDetailScreen = (props) => {
                 style={{
                   height: height * 0.13,
                   backgroundColor: utils.calculateGrade(menuItem.rating).color,
-                  // backgroundColor: "#ffebeb",
+                   backgroundColor: "#ffebeb",
                   borderRadius: 10,
                   flexDirection: "row",
                   justifyContent: "space-evenly",
@@ -851,7 +851,7 @@ const ProductDetailScreen = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+     flex: 1,
     backgroundColor: "#fff",
   },
   splash: {
@@ -869,8 +869,8 @@ const styles = StyleSheet.create({
 
   viewBack: {
     backgroundColor: "#fff",
-    // height: height * 0.75,
-    // flex: 1,
+     height: height * 0.75,
+     flex: 1,
     paddingBottom: 25,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,

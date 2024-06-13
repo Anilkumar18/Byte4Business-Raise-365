@@ -53,13 +53,13 @@ const NotificationsScreen = props => {
 
         const badge = _.sumBy(resp.data.restaurants, 'unread')
 
-        // if (!isNaN(badge)) {
-        //   console.log('setting badge counter to ', badge);
-        //   PushNotification.setApplicationIconBadgeNumber(badge)
-        // } else {
-        //   console.log('Badge not present on data payload, setting badge counter to 0');
-        //   PushNotification.setApplicationIconBadgeNumber(0)
-        // }
+         if (!isNaN(badge)) {
+           console.log('setting badge counter to ', badge);
+           PushNotification.setApplicationIconBadgeNumber(badge)
+         } else {
+           console.log('Badge not present on data payload, setting badge counter to 0');
+           PushNotification.setApplicationIconBadgeNumber(0)
+         }
       }
 
       setStore(previous => ({ ...previous, loading: false, notifications: resp.data.restaurants }))
@@ -122,14 +122,14 @@ const NotificationsScreen = props => {
             style={{
               width: 50,
               height: 50,
-              // borderRadius: 50,
+               borderRadius: 50,
             }}
-            // borderRadius={50}
+             borderRadius={50}
             loadingStyle={{ size: 'large', color: 'blue' }}
             placeholderStyle={{
               width: 50,
               height: 50,
-              // borderRadius: 50,
+               borderRadius: 50,
             }}
             resizeMode='contain'
             source={item.logo ? { uri: item.logo } : require("../assets/appicon.png")}

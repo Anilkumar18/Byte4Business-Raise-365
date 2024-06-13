@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     position: "absolute",
-    // top: hp("30%"),
+     top: hp("30%"),
     width: '60%'
   },
 });

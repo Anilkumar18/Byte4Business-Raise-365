@@ -81,7 +81,7 @@ const HomeScreen = (props) => {
           params: { data }
         }
       },
-      // contest: ''
+       contest: ''
     }
 
     return routeData[data.show_type] || defaultRouteData
@@ -472,14 +472,14 @@ const styles = StyleSheet.create({
   image: {
     alignSelf: "center",
     width: width * .8,
-    // backgroundColor: "#fff",
+     backgroundColor: "#fff",
     resizeMode: "contain",
-    // borderWidth: 5,
+     borderWidth: 5,
     marginLeft: 20,
     marginRight: 20,
     borderRadius: 15,
     padding: 70,
-    // height: Math.round((width * 6.3) / 16),
+     height: Math.round((width * 6.3) / 16),
     marginTop: 5,
   },
   userInfoSection: {

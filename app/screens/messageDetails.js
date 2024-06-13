@@ -223,7 +223,7 @@ const MessageDetailScreen = (props) => {
                     style={{
                       fontSize: 14,
                       fontFamily: "Nunito-Bold",
-                      // justifyContent: "center",
+                       justifyContent: "center",
                     }}
                   >{item.username}</Text>
                 ) : null
@@ -332,11 +332,11 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   userInfoSection: {
-    // alignSelf: "center",
-    // alignSelf: "center",
+     alignSelf: "center",
+     alignSelf: "center",
     marginTop: 15,
     marginHorizontal: 15,
-    // width: wp("90%"),
+     width: wp("90%"),
   },
   inputStyle: {
     paddingLeft: 13,

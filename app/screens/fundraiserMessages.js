@@ -47,7 +47,7 @@ const Button = ({ title, onPress, containerStyle, buttonStyle, titleStyle, icon,
     borderRadius: 20,
     height: 40,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: 'black',
     shadowOpacity: 0.5,
@@ -122,7 +122,7 @@ const FundraiserMessagesScreen = props => {
   const myProgress = myDetail ?
     _.sumBy(myDetail.customers, c => c.is_refunded ? 0 : c.quantity) : 0
 
-  // console.log('store fund messages', store.fundraiserMessages);
+  console.log('store fund messages', store.fundraiserMessages);
 
   useEffect(() => {
     if (isFocused) {
@@ -219,10 +219,10 @@ const FundraiserMessagesScreen = props => {
         paddingHorizontal: 20,
       }}>
         <View style={{
-          // paddingLeft: 20,
+           paddingLeft: 20,
           paddingTop: 15,
           height: 80,
-          // alignItems: 'center',
+           alignItems: 'center',
         }}>
           <View style={{
             flexDirection: 'row',
@@ -288,7 +288,7 @@ const FundraiserMessagesScreen = props => {
 
   const renderPrize = (prize, prizeIndex) => {
 
-    // console.log('renderprize', prize.selected_option)
+     console.log('renderprize', prize.selected_option)
 
     const imageStyle = {
       flex: 1,
@@ -377,14 +377,14 @@ const FundraiserMessagesScreen = props => {
       return null
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current)
-    const progressMax = Number(fundraiser.card_goal)
+//    const progressValue = Number(fundraiser.current)
+//    const progressMax = Number(fundraiser.card_goal)
 
     return (
       <ProgressBar
@@ -457,7 +457,7 @@ const FundraiserMessagesScreen = props => {
                   style={{
                     width: 40,
                     height: 40,
-                    // borderRadius: 15,
+                     borderRadius: 15,
                     marginRight: 10,
                     alignSelf: "center",
                     backgroundColor: '#ccc'

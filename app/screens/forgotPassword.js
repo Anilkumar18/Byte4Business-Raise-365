@@ -206,15 +206,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: '#bcbfc2',
-    // paddingBottom: hp("5%")
+     paddingBottom: hp("5%")
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
-    // bottom: hp("5%"),
+     bottom: hp("5%"),
     height: "75%",
     width: "100%",
     borderTopRightRadius: 25,

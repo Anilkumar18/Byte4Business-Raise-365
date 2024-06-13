@@ -278,7 +278,7 @@ const LoginScreen = (props) => {
                 onPress={() => {
                   setHidePassword(false);
                 }}
-                // style={{ position: "absolute", right: 14, top: 12 }}
+                 style={{ position: "absolute", right: 14, top: 12 }}
                 name="eye-outline"
                 color="#000"
                 size={22}
@@ -288,7 +288,7 @@ const LoginScreen = (props) => {
                 onPress={() => {
                   setHidePassword(true);
                 }}
-                // style={{ position: "absolute", right: 12, top: 12 }}
+                 style={{ position: "absolute", right: 12, top: 12 }}
                 name="eye-off-outline"
                 color="#000"
                 size={22}
@@ -307,7 +307,7 @@ const LoginScreen = (props) => {
           >
             <View style={{ flexDirection: "row", flex: 1 }}>
               <CheckBox
-                // style={styles.checkbox}
+                 style={styles.checkbox}
                 onClick={() => {
                   setIsRememberMe(!isRememberMe);
                 }}
@@ -405,7 +405,7 @@ const LoginScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#000",
+     backgroundColor: "#000",
     backgroundColor: '#bcbfc2',
   },
   splash: {
@@ -414,15 +414,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: '#bcbfc2',
-    // paddingBottom: hp("5%")
+     paddingBottom: hp("5%")
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
-    // bottom: hp("5%"),
+     bottom: hp("5%"),
     height: "75%",
     width: "100%",
     borderTopRightRadius: 25,
@@ -430,7 +430,7 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     flex: 1,
-    // paddingLeft: 13,
+     paddingLeft: 13,
     marginHorizontal: 10,
 
     color: "#051533",
@@ -446,8 +446,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: 'center',
     flexDirection: 'row',
-    // borderTopLeftRadius: 8,
-    // borderTopRightRadius: 8,
+     borderTopLeftRadius: 8,
+     borderTopRightRadius: 8,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Theme.redButtonColor,

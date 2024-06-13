@@ -54,7 +54,7 @@ const Button = ({ title, disabled = false, onPress, containerStyle, buttonStyle,
     borderRadius: 10,
     height: 30,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: 'black',
     shadowOpacity: 0.5,
@@ -193,7 +193,7 @@ const AddContactModal = ({
           borderRadius: 15,
           backgroundColor: 'white',
           paddingVertical: 20,
-          // alignItems: 'center',
+           alignItems: 'center',
           justifyContent: 'center'
         }}>
           <Text
@@ -256,7 +256,7 @@ const AddContactModal = ({
           <View style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            // marginTop: 25,
+             marginTop: 25,
           }}>
             <TouchableOpacity
               style={{ flex: 1 }}
@@ -462,7 +462,7 @@ const ImportContactModal = ({ visible, onSubmit, onClose, ...props }) => {
           flex: 1,
           backgroundColor: 'white',
           paddingTop: insets.top + 10,
-          // paddingBottom: insets.bottom,
+           paddingBottom: insets.bottom,
         }}
       >
 
@@ -541,14 +541,14 @@ const ImportContactModal = ({ visible, onSubmit, onClose, ...props }) => {
                 borderRadius: 5,
                 borderWidth: 1,
                 alignItems: 'center',
-                // justifyContent: 'center'
+                 justifyContent: 'center'
               }}>
 
                 <Icon type='ionicon' name='search-sharp' color='gray' size={18} />
 
                 <TextInput
                   style={{
-                    // flex: 1,
+                     flex: 1,
                     fontSize: 16,
                     fontFamily: 'Nunito-Regular',
                     paddingVertical: 0,
@@ -845,10 +845,10 @@ const FundraiserContactsScreen = props => {
         paddingHorizontal: 20,
       }}>
         <View style={{
-          // paddingLeft: 20,
+           paddingLeft: 20,
           paddingTop: 15,
           height: 80,
-          // alignItems: 'center',
+           alignItems: 'center',
         }}>
           <View style={{
             flexDirection: 'row',
@@ -915,14 +915,14 @@ const FundraiserContactsScreen = props => {
       return null
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current)
-    const progressMax = Number(fundraiser.card_goal)
+    //const progressValue = Number(fundraiser.current)
+    //const progressMax = Number(fundraiser.card_goal)
 
     return (
       <ProgressBar
@@ -1066,7 +1066,7 @@ const FundraiserContactsScreen = props => {
                   style={{
                     width: 40,
                     height: 40,
-                    // borderRadius: 15,
+                     borderRadius: 15,
                     marginRight: 10,
                     alignSelf: "center",
                     backgroundColor: '#ccc'

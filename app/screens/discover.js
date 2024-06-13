@@ -264,7 +264,7 @@ const DiscoverScreen = (props) => {
           justifyContent: 'space-between',
           alignItems: 'flex-start',
           width: wp("90%"),
-          // marginLeft: wp("5%"),
+           marginLeft: wp("5%"),
           marginTop: Platform.OS === "ios" ? hp("5%") : hp("3%"),
         }}>
 
@@ -377,16 +377,16 @@ const DiscoverScreen = (props) => {
             <ImageLoad style={{
               width: 70,
               height: 70,
-              // borderRadius: 50,
-              // backgroundColor: 'black'
+               borderRadius: 50,
+               backgroundColor: 'black'
             }}
-              // borderRadius={50}
+               borderRadius={50}
 
               loadingStyle={{ size: 'large', color: 'blue' }}
               placeholderStyle={{
                 width: 70,
                 height: 70,
-                // borderRadius: 50,
+                 borderRadius: 50,
               }}
               resizeMode='contain'
               source={item.logo ? { uri: logo } : require("../assets/pizza.png")}
@@ -411,7 +411,7 @@ const DiscoverScreen = (props) => {
                   />
                   <Text
                     style={{
-                      // textAlign: "center",
+                       textAlign: "center",
                       fontSize: 12,
                       marginLeft: 5,
                       color: "grey",
@@ -478,7 +478,7 @@ const DiscoverScreen = (props) => {
           latitude: location.latitude,
           longitude: location.longitude
         }}
-        // tracksViewChanges={false}
+         tracksViewChanges={false}
         onPress={event => selectMarker(location)}
         stopPropagation={true}
         style={{
@@ -492,28 +492,28 @@ const DiscoverScreen = (props) => {
         <View style={{
           padding: 10,
           borderRadius: 10,
-          // borderColor: '#ccc',
-          // borderWidth: 0.5,
+           borderColor: '#ccc',
+           borderWidth: 0.5,
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: 'white',
           elevation: 4,
           maxWidth: 80,
-          // marginBottom: 10
+           marginBottom: 10
         }}>
 
           <ImageLoad
             style={{
               width: 40,
               height: 40,
-              // borderRadius: 20,
+               borderRadius: 20,
             }}
-            // borderRadius={20}
+             borderRadius={20}
             loadingStyle={{ size: 'large', color: 'blue' }}
             placeholderStyle={{
               width: 40,
               height: 40,
-              // borderRadius: 20,
+               borderRadius: 20,
             }}
             resizeMode='contain'
             source={location.logo ? { uri: logo } : require("../assets/pizza.png")}
@@ -558,7 +558,7 @@ const DiscoverScreen = (props) => {
       <View style={{
         backgroundColor: 'white',
         elevation: 4,
-        // height: 60,
+         height: 60,
         position: 'absolute',
         left: 0,
         right: 0,
@@ -707,7 +707,7 @@ const DiscoverScreen = (props) => {
             fontFamily: "Nunito-Regular",
             textAlign: "center",
 
-            // color: "grey",
+             color: "grey",
           }}
         >
           to receive rewards!
@@ -749,14 +749,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#E5E5E5",
   },
   map: {
-    // ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFillObject,
     flex: 1,
   },
   splash: {
     width: wp("100%"),
     resizeMode: "cover",
-    // height: height > 800 ? hp("26") : hp("29%"),
-    // height: height * 0.2,
+     height: height > 800 ? hp("26") : hp("29%"),
+     height: height * 0.2,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     overflow: "hidden",
@@ -785,7 +785,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonContainer: {
-    // marginTop: 25,
+     marginTop: 25,
     alignSelf: "center",
     justifyContent: "center",
     borderRadius: 5,

@@ -116,21 +116,21 @@ const FavouriteScreen = (props) => {
   const renderFlatLists = () => {
 
     const { filter } = props.route.params
-    // console.log('filter', filter, business, menuItems);
+     console.log('filter', filter, business, menuItems);
 
-    // if (tabIndex === 0 && showTabs) {
-    //   return <FlatList
-    //     ListEmptyComponent={renderEmptyList('No business.')}
-    //     data={filter ? business.filter(b => b.id == filter.id) : business}
-    //     renderItem={renderRestaurent}
-    //     keyExtractor={(item) => `${item.id}`}
-    //   />
-    // } else {
+     if (tabIndex === 0 && showTabs) {
+       return <FlatList
+         ListEmptyComponent={renderEmptyList('No business.')}
+         data={filter ? business.filter(b => b.id == filter.id) : business}
+         renderItem={renderRestaurent}
+         keyExtractor={(item) => `${item.id}`}
+       />
+     } else {
 
 
     const filteredMenuItems = filter ? menuItems.filter(item => item.location_id == filter.id) : menuItems
 
-    // if (showTabs) {
+     if (showTabs) {
     const sections = _.map(
       _.groupBy(filteredMenuItems, 'location_name'), (group, key) => ({
         title: key,
@@ -154,15 +154,15 @@ const FavouriteScreen = (props) => {
         keyExtractor={(item) => `${item.id}`}
       />
     )
-    // }
+     }
 
-    // return <FlatList
-    //   ListEmptyComponent={renderEmptyList('No menu items.')}
-    //   data={filteredMenuItems}
-    //   renderItem={renderMenuItem}
-    //   keyExtractor={(item) => `${item.id}`}
-    // />
-    // }
+     return <FlatList
+       ListEmptyComponent={renderEmptyList('No menu items.')}
+       data={filteredMenuItems}
+       renderItem={renderMenuItem}
+       keyExtractor={(item) => `${item.id}`}
+     />
+     }
 
   }
 
@@ -224,15 +224,15 @@ const FavouriteScreen = (props) => {
             style={{
               width: 70,
               height: 70,
-              // borderRadius: 50,
+               borderRadius: 50,
             }}
-            // borderRadius={50}
+             borderRadius={50}
 
             loadingStyle={{ size: 'large', color: 'blue' }}
             placeholderStyle={{
               width: 70,
               height: 70,
-              // borderRadius: 50,
+               borderRadius: 50,
             }}
             resizeMode='contain'
             source={{
@@ -283,7 +283,7 @@ const FavouriteScreen = (props) => {
 
 
   const renderMenuItem = ({ item }) => {
-    // console.log("item===", item)
+     console.log("item===", item)
     return (
       <TouchableOpacity
         onPress={() => {
@@ -343,7 +343,7 @@ const FavouriteScreen = (props) => {
               />
               <Text
                 style={{
-                  // textAlign: "center",
+                   textAlign: "center",
                   fontSize: 12,
                   marginLeft: 5,
                   fontFamily: "Nunito-Regular",
@@ -432,16 +432,16 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   userInfoSection: {
-    // paddingHorizontal: 10,
+     paddingHorizontal: 10,
     padding: 10,
-    // backgroundColor: "yellow",
+     backgroundColor: "yellow",
     backgroundColor: "#fff",
-    // alignSelf: "center",
+     alignSelf: "center",
     marginTop: 10,
     marginHorizontal: 15,
-    // width: wp("93%"),
+     width: wp("93%"),
     flex: 1,
-    // height: 90,
+     height: 90,
     borderRadius: 10,
   },
 

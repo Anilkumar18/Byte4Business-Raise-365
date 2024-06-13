@@ -221,10 +221,10 @@ const MerchantFundraiserScreen = (props) => {
         props.navigation.goBack()
       }, 3000)
 
-      // showMessage({
-      //   type: 'success',
-      //   message: 'Your receipt has been sent'
-      // })
+       showMessage({
+         type: 'success',
+         message: 'Your receipt has been sent'
+       })
     }
     catch (error) {
       console.log('extraApiService.rewardPhotoUpload error', error);
@@ -390,16 +390,16 @@ const MerchantFundraiserScreen = (props) => {
               style={{
                 width: 38,
                 height: 38,
-                // borderRadius: 50,
+                 borderRadius: 50,
               }}
-              // borderRadius={50}
+               borderRadius={50}
 
               source={data.logo ? { uri: data.logo } : require("../assets/userImage.png")}
               loadingStyle={{ size: 'large', color: 'blue' }}
               placeholderStyle={{
                 width: 38,
                 height: 38,
-                // borderRadius: 50,
+                 borderRadius: 50,
               }}
               resizeMode='contain'
             />
@@ -495,7 +495,7 @@ const MerchantFundraiserScreen = (props) => {
           style={{
             flex: 1,
             backgroundColor: "#fff",
-            // height: height > 800 ? height * 0.59 : height * 0.62,
+             height: height > 800 ? height * 0.59 : height * 0.62,
             paddingBottom: 20,
             marginTop: 15,
             borderRadius: 25,
@@ -512,14 +512,14 @@ const MerchantFundraiserScreen = (props) => {
               <ImageLoad
                 style={{
                   flex: 1,
-                  // height: '40%',
+                   height: '40%',
                   backgroundColor: 'white',
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
                 }}
                 placeholderStyle={{
                   flex: 1,
-                  // height: '40%',
+                   height: '40%',
                   backgroundColor: 'white',
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
@@ -586,13 +586,13 @@ const MerchantFundraiserScreen = (props) => {
             <View style={{
               flexDirection: 'row',
               alignSelf: "center",
-              // marginTop: height > 800 ? 15 : 10,
+               marginTop: height > 800 ? 15 : 10,
               borderRadius: 8,
               height: height * 0.05,
               justifyContent: "center",
               alignItems: 'center',
               backgroundColor: Theme.redButtonColor,
-              // paddingHorizontal: 25
+               paddingHorizontal: 25,
               width: "50%",
             }}>
 
@@ -654,7 +654,7 @@ const MerchantFundraiserScreen = (props) => {
           justifyContent: 'space-between',
           alignItems: 'flex-start',
           width: wp("90%"),
-          // marginLeft: wp("5%"),
+           marginLeft: wp("5%"),
           marginTop: Platform.OS === "ios" ? hp("5%") : hp("3%"),
         }}>
 
@@ -999,15 +999,15 @@ const MerchantFundraiserScreen = (props) => {
         >
           <View style={{
             flexDirection: 'row',
-            // alignSelf: "center",
+             alignSelf: "center",
             marginBottom: 10,
             borderRadius: 8,
             height: height * 0.05,
             justifyContent: "center",
             alignItems: 'center',
             backgroundColor: 'green',
-            paddingHorizontal: 25
-            // width: "50%",
+            paddingHorizontal: 25,
+             width: "50%",
           }}>
             {submitting ? <ActivityIndicator color='#fff' /> : null}
             <Text
@@ -1091,7 +1091,7 @@ const MerchantFundraiserScreen = (props) => {
                 borderRadius: 25,
                 height: height * 0.05,
                 backgroundColor: Theme.redButtonColor,
-                // paddingHorizontal: 20,
+                 paddingHorizontal: 20,
                 width: "30%",
               }}>
                 <TouchableOpacity onPress={() => {
@@ -1174,19 +1174,19 @@ const styles = StyleSheet.create({
   splash: {
     width: wp("100%"),
     resizeMode: "cover",
-    // height: height * 0.2,
+     height: height * 0.2,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     overflow: "hidden",
   },
   userInfoSection: {
     paddingLeft: 10,
-    // height: 70,
-    // backgroundColor: "#fff",
+     height: 70,
+     backgroundColor: "#fff",
     backgroundColor: "transparent",
-    // alignSelf: "center",
-    // marginVertical: 10,
-    // width: wp("93%"),
+     alignSelf: "center",
+     marginVertical: 10,
+     width: wp("93%"),
 
     borderRadius: 10,
   },
@@ -1199,8 +1199,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
