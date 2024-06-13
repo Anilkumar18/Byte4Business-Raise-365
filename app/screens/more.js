@@ -119,7 +119,7 @@ const MoreScreen = props => {
       const watchId = await utils.watchLocation(
         currentLocation => {
           setStore(previous => ({ ...previous, currentLocation }))
-          // updateNearbyBusiness(currentLocation)
+           updateNearbyBusiness(currentLocation)
         },
         error => { }
       )
@@ -191,12 +191,12 @@ const MoreScreen = props => {
     const sharelink = JSON.parse(await AsyncStorage.getItem('@sharelink'))
     const leaderboard = JSON.parse(await AsyncStorage.getItem('@leaderboard'))
 
-    // const resp = await extraApiService.getAllFundraiserGroups()
-    // console.log('extraApiService.searchFundraiser response', resp.data)
+     const resp = await extraApiService.getAllFundraiserGroups()
+     console.log('extraApiService.searchFundraiser response', resp.data)
     setUserId(user_id)
     setFirstName(userfirst_name)
     setLastName(userlast_name)
-    // setTeams(resp.data)
+     setTeams(resp.data)
 
     if (userfirst_name && userlast_name) {
       setName(`${userfirst_name} ${userlast_name}`);
@@ -257,13 +257,13 @@ const MoreScreen = props => {
 
         const badge = _.sumBy(resp.data.restaurants, 'unread')
 
-        // if (!isNaN(badge)) {
-        //   console.log('setting badge counter to ', badge);
-        //   PushNotification.setApplicationIconBadgeNumber(badge)
-        // } else {
-        //   console.log('Badge not present on data payload, setting badge counter to 0');
-        //   PushNotification.setApplicationIconBadgeNumber(0)
-        // }
+         if (!isNaN(badge)) {
+           console.log('setting badge counter to ', badge);
+           PushNotification.setApplicationIconBadgeNumber(badge)
+         } else {
+           console.log('Badge not present on data payload, setting badge counter to 0');
+           PushNotification.setApplicationIconBadgeNumber(0)
+         }
       }
       setStore(previous => ({ ...previous, loading: false, notifications: resp.data.restaurants }))
     }
@@ -363,7 +363,7 @@ const MoreScreen = props => {
       const base64Data = await resp.readFile('base64')
 
       const fileContent = `data:image/png;base64,${base64Data}`
-      // console.log(fileContent);
+       console.log(fileContent);
       setPreparingShareContent(false)
 
       if (userId) {
@@ -459,7 +459,7 @@ const MoreScreen = props => {
             borderRadius: 15,
             backgroundColor: 'white',
             paddingVertical: 20,
-            // alignItems: 'center',
+             alignItems: 'center',
             justifyContent: 'center'
           }}>
             <Text
@@ -633,7 +633,7 @@ const MoreScreen = props => {
                     onPress={() => props.navigation.navigate("purchaseHistory", { userId })}
                   />
 
-                  {/* <DrawerItem
+                  { <DrawerItem
                     labelStyle={{
                       fontSize: 18,
                       color: "#051533",
@@ -654,13 +654,13 @@ const MoreScreen = props => {
                     )}
                     label="Fundraisers"
                     onPress={() => props.navigation.navigate("userFundraiser", { user: { id: userId, name, avatar } })}
-                  /> */}
+                  /> }
                   <DrawerItem
-                    // labelStyle={{
-                    //   fontSize: 18,
-                    //   color: "#051533",
-                    //   fontFamily: "Nunito-Regular",
-                    // }}
+                     labelStyle={{
+                       fontSize: 18,
+                       color: "#051533",
+                       fontFamily: "Nunito-Regular",
+                     }}
                     icon={iconProps => <Icon type='material-community' {...iconProps} name='bell-outline' />}
                     style={{
                       marginVertical: 0,
@@ -702,7 +702,7 @@ const MoreScreen = props => {
                   />
 
                 </Drawer.Section>
-                {/* <Drawer.Section>
+                { <Drawer.Section>
             <DrawerItem
               labelStyle={{
                 fontSize: 18,
@@ -829,7 +829,7 @@ const MoreScreen = props => {
                   onPress={() => setQrCodeVisible(true)}
                 />
               </>}
-          </Drawer.Section> */}
+          </Drawer.Section> }
                 <Drawer.Section>
                   <DrawerItem
                     labelStyle={{
@@ -856,8 +856,8 @@ const MoreScreen = props => {
                         RNZendesk.identifyAnonymous(username, email);
                         RNZendesk.showHelpCenter({ subject: "Need help" })
 
-                        // props.navigation.closeDrawer()
-                        // props.navigation.navigate("needHelp")
+                         props.navigation.closeDrawer()
+                         props.navigation.navigate("needHelp")
                       }
                       catch (error) {
                         console.log('open zendesk error', error);

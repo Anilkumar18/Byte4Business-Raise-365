@@ -132,7 +132,7 @@ const PurchaseHistoryScreen = (props) => {
           })
       }
 
-      // console.log('fileCOntnet', fileContent);
+       console.log('fileCOntnet', fileContent);
       setTimeout(async () => {
         const shareResponse = await Share.open({
           title: purchaseItem.fundraiser.fundraiser_name,
@@ -231,15 +231,15 @@ const PurchaseHistoryScreen = (props) => {
                     images: purchasedItem.images,
 
                     modifier_categories: purchasedItem.modifier_categories,
-                    // modifier_categories: [{
-                    //   id: 'last-choice',
-                    //   name: 'Last Choice',
-                    //   modifiers: _.map(purchasedItem.order_item_options, modifier => ({
-                    //     id: modifier.item_option_addon_id,
-                    //     name: modifier.item_option_addon_name,
-                    //     price: modifier.price
-                    //   }))
-                    // }]
+                     modifier_categories: [{
+                       id: 'last-choice',
+                       name: 'Last Choice',
+                       modifiers: _.map(purchasedItem.order_item_options, modifier => ({
+                         id: modifier.item_option_addon_id,
+                         name: modifier.item_option_addon_name,
+                         price: modifier.price
+                       }))
+                     }]
                   },
                   checkoutData: {
                     quantity: purchasedItem.quantity,
@@ -288,7 +288,7 @@ const PurchaseHistoryScreen = (props) => {
               paddingVertical: 5,
               minHeight: 70,
               backgroundColor: "#fff",
-              // alignSelf: "center",
+               alignSelf: "center",
               marginTop: 13,
               marginHorizontal: 10,
               width: wp("93%"),
@@ -313,7 +313,7 @@ const PurchaseHistoryScreen = (props) => {
                     placeholderStyle={{
                       width: 50,
                       height: 50,
-                      // backgroundColor: '#ccc'
+                       backgroundColor: '#ccc'
                     }}
                     resizeMode='contain'
                     source={{ uri: logo }}
@@ -368,7 +368,7 @@ const PurchaseHistoryScreen = (props) => {
                       flex: 1,
                       textAlign: "center",
                       fontSize: 12,
-                      // marginLeft: 5,
+                       marginLeft: 5,
                       color: "grey",
                       fontFamily: "Nunito-Regular",
                     }}
@@ -441,13 +441,13 @@ const PurchaseHistoryScreen = (props) => {
             style={{
               width: 50,
               height: 50,
-              // backgroundColor: '#ccc'
+               backgroundColor: '#ccc'
             }}
             loadingStyle={{ size: 'large', color: 'blue' }}
             placeholderStyle={{
               width: 50,
               height: 50,
-              // backgroundColor: '#ccc'
+               backgroundColor: '#ccc'
             }}
             resizeMode='contain'
             source={item.fundraiser.logo ? { uri: item.fundraiser.logo } : require("../assets/tea.png")}
@@ -524,12 +524,12 @@ const PurchaseHistoryScreen = (props) => {
   const renderTabButtons = () => {
 
     const containerStyle = {
-      // alignSelf: "center",
+       alignSelf: "center",
       justifyContent: "center",
       borderRadius: 5,
-      // flex: 1,
+       flex: 1,
       height: 32,
-      // width: "49%",
+       width: "49%",
 
       backgroundColor: 'grey'
     }

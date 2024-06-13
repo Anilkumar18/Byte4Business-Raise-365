@@ -71,7 +71,7 @@ const FundraiserMessageComposerScreen = props => {
   const myProgress = myDetail ?
     _.sumBy(myDetail.customers, c => c.is_refunded ? 0 : c.quantity) : 0
 
-  // const showSuggestions = edittingRecipient && _.trim(searchTerm).length > 2 && (loadingSuggestions || suggestions.length > 0)
+   //const showSuggestions = edittingRecipient && _.trim(searchTerm).length > 2 && (loadingSuggestions || suggestions.length > 0)
   const canSend = recipient && !!_.trim(message)
 
   useEffect(() => {
@@ -166,10 +166,10 @@ const FundraiserMessageComposerScreen = props => {
         paddingHorizontal: 20,
       }}>
         <View style={{
-          // paddingLeft: 20,
+           paddingLeft: 20,
           paddingTop: 15,
           height: 80,
-          // alignItems: 'center',
+           alignItems: 'center',
         }}>
           <View style={{
             flexDirection: 'row',
@@ -238,14 +238,14 @@ const FundraiserMessageComposerScreen = props => {
       return null
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current)
-    const progressMax = Number(fundraiser.card_goal)
+//    const progressValue = Number(fundraiser.current)
+//    const progressMax = Number(fundraiser.card_goal)
 
     return (
       <ProgressBar
@@ -415,7 +415,7 @@ const FundraiserMessageComposerScreen = props => {
     return (
       <TextInput
         style={{
-          // flex: 1,
+           flex: 1,
           fontSize: 16,
           fontFamily: 'Nunito-Regular',
           borderTopWidth: 1,
@@ -445,8 +445,8 @@ const FundraiserMessageComposerScreen = props => {
           stickyHeaderIndices={[2]}
           keyboardShouldPersistTaps='handled'
           contentContainerStyle={{
-            // paddingBottom: 40,
-            // backgroundColor: 'yellow',
+             paddingBottom: 40,
+             backgroundColor: 'yellow',
             flexGrow: 1
           }}
         >
@@ -466,7 +466,7 @@ const FundraiserMessageComposerScreen = props => {
                     style={{
                       width: 40,
                       height: 40,
-                      // borderRadius: 15,
+                       borderRadius: 15,
                       marginRight: 10,
                       alignSelf: "center",
                       backgroundColor: '#ccc'

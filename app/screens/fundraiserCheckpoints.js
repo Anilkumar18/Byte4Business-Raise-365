@@ -49,7 +49,7 @@ const Button = ({ title, onPress, containerStyle, buttonStyle, titleStyle, icon,
     borderRadius: 20,
     height: 40,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: 'black',
     shadowOpacity: 0.5,
@@ -145,10 +145,10 @@ const FundraiserCheckpointsScreen = props => {
         paddingHorizontal: 20,
       }}>
         <View style={{
-          // paddingLeft: 20,
+          paddingLeft: 20,
           paddingTop: 15,
           height: 80,
-          // alignItems: 'center',
+           alignItems: 'center',
         }}>
           <View style={{
             flexDirection: 'row',
@@ -227,7 +227,7 @@ const FundraiserCheckpointsScreen = props => {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
-          // paddingVertical: 20,
+          paddingVertical: 20,
           paddingHorizontal: 20,
         }}
       >
@@ -261,7 +261,7 @@ const FundraiserCheckpointsScreen = props => {
 
         <View style={{
           flex: 0.8,
-          // marginLeft: 15,
+           marginLeft: 15,
           marginBottom: 20,
         }}>
           <Text style={{
@@ -283,14 +283,14 @@ const FundraiserCheckpointsScreen = props => {
       return null
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current)
-    const progressMax = Number(fundraiser.card_goal)
+   // const progressValue = Number(fundraiser.current)
+    //const progressMax = Number(fundraiser.card_goal)
 
     return (
       <ProgressBar
@@ -324,7 +324,7 @@ const FundraiserCheckpointsScreen = props => {
                   style={{
                     width: 40,
                     height: 40,
-                    // borderRadius: 15,
+                     borderRadius: 15,
                     marginRight: 10,
                     alignSelf: "center",
                     backgroundColor: '#ccc'

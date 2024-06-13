@@ -128,7 +128,7 @@ const RewardScreen = (props) => {
           justifyContent: 'space-between',
           alignItems: 'center',
           marginTop: 10,
-          // marginBottom: 10
+           marginBottom: 10
         }}>
 
           <View style={{ minWidth: 60 }} />
@@ -153,7 +153,7 @@ const RewardScreen = (props) => {
           style={{
             flex: 1,
             backgroundColor: "#fff",
-            // height: height > 800 ? height * 0.59 : height * 0.62,
+             height: height > 800 ? height * 0.59 : height * 0.62,
             paddingBottom: 20,
             marginTop: 15,
             borderRadius: 25,
@@ -172,7 +172,7 @@ const RewardScreen = (props) => {
                   flex: 1,
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
-                  // height: '40%',
+                   height: '40%',
                   backgroundColor: 'white'
                 }}
                 placeholderStyle={{
@@ -180,7 +180,7 @@ const RewardScreen = (props) => {
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
                   backgroundColor: 'white',
-                  // height: '40%',
+                   height: '40%',
                 }}
                 resizeMode='contain'
                 source={{ uri: item.reward.photo }}
@@ -244,13 +244,13 @@ const RewardScreen = (props) => {
             <View style={{
               flexDirection: 'row',
               alignSelf: "center",
-              // marginTop: height > 800 ? 15 : 10,
+               marginTop: height > 800 ? 15 : 10,
               borderRadius: 8,
               height: height * 0.05,
               justifyContent: "center",
               alignItems: 'center',
               backgroundColor: Theme.redButtonColor,
-              // paddingHorizontal: 25
+              paddingHorizontal: 25,
               width: "50%",
             }}>
 

@@ -164,10 +164,10 @@ const GradesScreen = (props) => {
               style={{
                 width: 30,
                 height: 36,
-                // position: "absolute",
-                // right: 10,
-                // top: height * 0.018,
-                // backgroundColor: 'yellow'
+                 position: "absolute",
+                 right: 10,
+                 top: height * 0.018,
+                 backgroundColor: 'yellow',
                 marginRight: 10
               }}
               source={grade.badge}

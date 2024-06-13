@@ -239,7 +239,7 @@ const NotificationDetailScreen = (props) => {
                 fontSize: 16,
                 fontFamily: item.status ? 'Nunito-Regular' : "Nunito-Bold",
                 justifyContent: "center",
-                // fontWeight: "800",
+                 fontWeight: "800",
               }}
               numberOfLines={2}
             >{parseMessage(item.message)}</Text>

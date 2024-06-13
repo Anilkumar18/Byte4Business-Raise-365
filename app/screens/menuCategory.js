@@ -271,7 +271,7 @@ const MenuCategoryScreen = (props) => {
       const base64Data = await resp.readFile('base64')
 
       const fileContent = `data:image/png;base64,${base64Data}`
-      // console.log(fileContent);
+       console.log(fileContent);
       setPreparingShareContent(false)
 
       setTimeout(async () => {
@@ -309,9 +309,9 @@ const MenuCategoryScreen = (props) => {
         key={item.id}
         style={{
           backgroundColor: "#fff",
-          // height: height > 800 ? height * 0.65 : height * 0.67,
+           height: height > 800 ? height * 0.65 : height * 0.67,
           marginTop: 15,
-          // paddingHorizontal:10,
+           paddingHorizontal:10,
           marginHorizontal: 10,
           borderRadius: 15,
           paddingBottom: 10,
@@ -334,7 +334,7 @@ const MenuCategoryScreen = (props) => {
           ) : (
               <ImageLoad
                 style={{
-                  // width: width * 0.9,
+                   width: width * 0.9,
                   height: height * 0.4,
                   borderTopLeftRadius: 5,
                   borderTopRightRadius: 5,
@@ -417,7 +417,7 @@ const MenuCategoryScreen = (props) => {
           style={{
             flexDirection: "row",
             marginLeft: 20,
-            // marginTop: 5,
+             marginTop: 5,
             alignItems: 'center'
           }}
         >
@@ -425,7 +425,7 @@ const MenuCategoryScreen = (props) => {
             style={{
               width: width * 0.03,
               height: height * 0.015,
-              // marginTop: 3,
+               marginTop: 3,
             }}
             source={require("../assets/award.png")}
           />
@@ -460,7 +460,7 @@ const MenuCategoryScreen = (props) => {
           <View
             style={{
               backgroundColor: grade.color,
-              // backgroundColor: "#ffc0cb",
+               backgroundColor: "#ffc0cb",
               width: width * 0.4,
               borderTopRightRadius: 25,
               borderBottomRightRadius: 25,
@@ -743,7 +743,7 @@ const MenuCategoryScreen = (props) => {
                 justifyContent: "center",
                 alignItems: 'center',
                 backgroundColor: 'green',
-                // paddingHorizontal: 25
+                 paddingHorizontal: 25,
                 width: "50%",
               }}>
                 {submitting ? <ActivityIndicator color='#fff' /> : null}
@@ -839,9 +839,9 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   userInfoSection: {
-    // alignSelf: "center",
-    // width: width * 0.9,
-    // height: height * 0.68,
+     alignSelf: "center",
+     width: width * 0.9,
+     height: height * 0.68,
     marginTop: 10,
   },
   iconStyle: {

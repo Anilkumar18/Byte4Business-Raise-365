@@ -112,13 +112,13 @@ const ProductMenuScreen = (props) => {
           imageStyle={{
             width: "100%",
             borderRadius: 20,
-            // padding: 15
+             padding: 15
 
           }}
 
           style={{
             marginTop: 10,
-            // height: height > 800 ? height * 0.19 : height * 0.23,
+             height: height > 800 ? height * 0.19 : height * 0.23,
           }}
 
           source={item.image_url ? { uri: item.image_url } : require("../assets/soup.png")}
@@ -135,7 +135,7 @@ const ProductMenuScreen = (props) => {
           <View style={{ paddingHorizontal: 5 }}>
             <Text
               style={{
-                // fontSize: height * 0.02,
+                 fontSize: height * 0.02,
                 padding: 40,
                 fontFamily: "Nunito-SemiBold",
                 color: "#fff", textAlign: "center",
@@ -209,9 +209,9 @@ const ProductMenuScreen = (props) => {
                 style={{
                   fontSize: height * 0.04,
                   fontFamily: "Nunito-Bold",
-                  // position: "absolute",
-                  // top: height * 0.12,
-                  // left: 20,
+                   position: "absolute",
+                   top: height * 0.12,
+                   left: 20,
                   color: "#fff",
                 }}
               >Product Menu</Text>
@@ -221,9 +221,9 @@ const ProductMenuScreen = (props) => {
               searching ?
                 <Image
                   style={{
-                    // position: "absolute",
-                    // top: height * 0.12,
-                    // right: 6,
+                     position: "absolute",
+                     top: height * 0.12,
+                     right: 6,
                     width: height > 800 ? 45 : 37,
                     height: height > 800 ? 45 : 37,
                   }}
@@ -231,9 +231,9 @@ const ProductMenuScreen = (props) => {
                 /> :
                 <Image
                   style={{
-                    // position: "absolute",
-                    // top: height * 0.12,
-                    // right: 6,
+                     position: "absolute",
+                     top: height * 0.12,
+                     right: 6,
                     width: height > 800 ? 45 : 37,
                     height: height > 800 ? 45 : 37,
                   }}
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   userInfoSection: {
-    // marginHorizontal:20
+     marginHorizontal:20
 
   },
 });

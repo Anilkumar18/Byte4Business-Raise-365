@@ -20,7 +20,7 @@ import Theme from "../utils";
 import { extraApiService } from "../Services/extraApiService";
 import { useIsFocused } from '@react-navigation/native';
 
-// import { ScrollView } from "react-native-gesture-handler";
+//import { ScrollView } from "react-native-gesture-handler";
 import _ from 'lodash'
 import { showMessage } from "react-native-flash-message";
 import { utils } from '../Utils/utils'
@@ -66,20 +66,20 @@ const SearchLocationScreen = (props) => {
 
         setCategories(_.orderBy(expandableCategories, 'sequence'))
       }
-      // let dataList = []
-      // let restaurentData = {}
+       let dataList = []
+       let restaurentData = {}
 
-      // for (let data of resp.data.tag_categories) {
-      //   if (data.tag_type === "location") {
-      //     dataList.push(data)
-      //     break
-      //   } else {
-      //   }
-      // }
+       for (let data of resp.data.tag_categories) {
+         if (data.tag_type === "location") {
+           dataList.push(data)
+           break
+         } else {
+         }
+       }
 
-      // setData(dataList)
-      // setrestaurentData(restaurentData)
-      // console.log("ddataaaa", JSON.stringify(resp.data))
+       setData(dataList)
+       setrestaurentData(restaurentData)
+       console.log("ddataaaa", JSON.stringify(resp.data))
 
     } catch (error) {
       console.log("erroro", error)
@@ -142,7 +142,7 @@ const SearchLocationScreen = (props) => {
 
         <TouchableOpacity
           onPress={() => {
-            // toggle
+             toggle
             setCategories(
               _.map(categories,
                 c => c.name == category.name ? ({ ...category, expand: !category.expand }) : c
@@ -325,11 +325,11 @@ const styles = StyleSheet.create({
   },
 
   inputSearchStyle: {
-    // marginLeft: width * 0.05,
-    // paddingLeft: width * 0.05,
-    // width: width * 0.9,
+     marginLeft: width * 0.05,
+     paddingLeft: width * 0.05,
+     width: width * 0.9,
     flex: 1,
-    // height: height * 0.06,
+     height: height * 0.06,
 
 
 

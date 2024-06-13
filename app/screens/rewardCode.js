@@ -106,7 +106,7 @@ const RewardCodeScreen = (props) => {
               flexDirection: 'row',
               alignItems: 'flex-start',
               justifyContent: 'space-between',
-              // marginTop: height * 0.03,
+               marginTop: height * 0.03,
               marginTop: 20,
               paddingHorizontal: 15
             }}
@@ -153,7 +153,7 @@ const RewardCodeScreen = (props) => {
             flexDirection: 'row',
             alignItems: 'flex-start',
             justifyContent: 'center',
-            // marginTop: height * 0.03,
+             marginTop: height * 0.03,
             marginTop: 20,
             paddingHorizontal: 15
           }}

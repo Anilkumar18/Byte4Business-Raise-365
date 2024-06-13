@@ -212,8 +212,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     height: hp("70%"),
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
-    //paddingBottom: 50,
+    paddingBottom: 50,
   },
   inputStyle: {
     marginLeft: 15,

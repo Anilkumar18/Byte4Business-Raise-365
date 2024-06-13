@@ -34,7 +34,7 @@ const NearbySearchedScreen = (props) => {
   const [loading, setLoading] = useState(true);
   const [myLocations, setMyLocations] = useState([])
   const [currentLocation, setCurrentLocation] = useState({})
-  // console.log('NEARBY SEARCHED PARAMS', props.route.params);
+   console.log('NEARBY SEARCHED PARAMS', props.route.params);
   const DATA = [
     {
       id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -209,15 +209,15 @@ const NearbySearchedScreen = (props) => {
           <ImageLoad style={{
             width: 70,
             height: 70,
-            // borderRadius: 50,
+             borderRadius: 50,
           }}
-            // borderRadius={50}
+             borderRadius={50}
 
             loadingStyle={{ size: 'large', color: 'blue' }}
             placeholderStyle={{
               width: 70,
               height: 70,
-              // borderRadius: 50,
+               borderRadius: 50,
             }}
             resizeMode='contain'
             source={item.logo ? { uri: item.logo } : require("../assets/pizza.png")}
@@ -359,7 +359,7 @@ const NearbySearchedScreen = (props) => {
             fontFamily: "Nunito-Regular",
             textAlign: "center",
             flexDirection: "row",
-            // color: "grey",
+             color: "grey",
           }}
         >
           Select
@@ -376,7 +376,7 @@ const NearbySearchedScreen = (props) => {
             fontFamily: "Nunito-Regular",
             textAlign: "center",
 
-            // color: "grey",
+             color: "grey",
           }}
         >
           to receive rewards!

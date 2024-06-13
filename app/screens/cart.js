@@ -71,7 +71,7 @@ const DateTimePicker = ({
           borderRadius: 15,
           backgroundColor: 'white',
           paddingVertical: 20,
-          // alignItems: 'center',
+           alignItems: 'center',
           justifyContent: 'center'
         }}>
           <View style={{
@@ -182,7 +182,7 @@ const CartScreen = props => {
   const issuer = /^(34|37)/.test(paymentCardNumber) ? 'amex' : 'visa-or-mastercard'
   const rawCardNumber = _.replace(paymentCardNumber, /\s/g, '').substr(0, issuer == 'amex' ? 15 : 16)
 
-  // console.log('reordering?', cart.reordering, cart.name, cart.phone);
+   console.log('reordering?', cart.reordering, cart.name, cart.phone);
 
   useEffect(() => {
     if (isFocused) {
@@ -600,14 +600,14 @@ const CartScreen = props => {
 
     const image = _.get(cartItem, 'itemData.images[0].image')
     const subtotal = Number(cartItem.itemData.price) * cartItem.checkoutData.quantity
-    // const subtotalWithModifiers = cartItem.itemData.price * cartItem.checkoutData.quantity +
-    //   _.sumBy(cartItem.checkoutData.modifiers, modifierId => {
-    //     const found = _.find(
-    //       _.flatMap(cartItem.itemData.modifier_categories, 'modifiers'),
-    //       { id: modifierId }
-    //     )
-    //     return found ? Number(found.price) : 0
-    //   })
+     const subtotalWithModifiers = cartItem.itemData.price * cartItem.checkoutData.quantity +
+       _.sumBy(cartItem.checkoutData.modifiers, modifierId => {
+         const found = _.find(
+           _.flatMap(cartItem.itemData.modifier_categories, 'modifiers'),
+           { id: modifierId }
+         )
+         return found ? Number(found.price) : 0
+       })
 
     return (
       <View style={{
@@ -616,7 +616,7 @@ const CartScreen = props => {
         backgroundColor: 'white',
         marginTop: 15,
         marginHorizontal: 15,
-        // paddingBottom: 15,
+         paddingBottom: 15,
       }}>
         <View>
 
@@ -815,7 +815,7 @@ const CartScreen = props => {
             onChangeText={notes => updateCheckoutData(cartItem, { notes })}
           />
 
-          {/* <View style={{
+          { <View style={{
             marginTop: 15,
             flexDirection: 'row',
           }}>
@@ -832,7 +832,7 @@ const CartScreen = props => {
               }}>$ {subtotalWithModifiers}</Text>
             </View>
 
-          </View> */}
+          </View> }
 
           <View style={{
             marginTop: 15,
@@ -884,11 +884,11 @@ const CartScreen = props => {
     const taxes = cart.business.tax
     const serviceFee = cart.business.service_fee_type == 'percent' ? (Number(cart.business.fee) / 100) * itemsSubtotal : Number(cart.business.fee)
 
-    // const rawDonation = MaskService.toRawValue('money', donation, {
-    //   unit: '$ ',
-    //   separator: '.',
-    //   delimiter: ','
-    // })
+     const rawDonation = MaskService.toRawValue('money', donation, {
+       unit: '$ ',
+       separator: '.',
+       delimiter: ','
+     })
 
     const fixedDonation = Number(donation) > 0 ? donation : '0'
     const calculatedDonation = (Number(fixedDonation) / 100) * itemsSubtotal
@@ -956,7 +956,7 @@ const CartScreen = props => {
             alignItems: 'center'
           }}>
             <Text style={textStyle}>Tip</Text>
-            {/* <TextInputMask
+            { <TextInputMask
               style={{
                 ...textStyle,
                 flex: 1,
@@ -976,14 +976,14 @@ const CartScreen = props => {
               maxLength={11}
               value={donation}
               onChangeText={setDonation}
-            /> */}
+            /> }
             <Text style={textStyle}>{utils.formatMoney(calculatedDonation)}</Text>
           </View>
         </View>
 
         <View style={rowStyle}>
           <View style={{ flex: 1, }} />
-          {/* <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          { <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             {
               cart.business.service_fee_type == 'percent' ?
                 <View style={{
@@ -995,7 +995,7 @@ const CartScreen = props => {
                 </View>
                 : null
             }
-          </View> */}
+          </View> }
           <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
             <Text style={textStyle}>Service fee {cart.business.service_fee_type == 'percent' ? `(${Number(cart.business.fee)}%)` : ''}</Text>
             <Text style={textStyle}>{utils.formatMoney(serviceFee)}</Text>
@@ -1640,7 +1640,7 @@ const CartScreen = props => {
             borderRadius: 15,
             backgroundColor: 'white',
             paddingVertical: 20,
-            // alignItems: 'center',
+             alignItems: 'center',
             justifyContent: 'center'
           }}>
             <View style={{

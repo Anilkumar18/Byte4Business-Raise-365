@@ -364,16 +364,16 @@ const DealsDetailScreen = (props) => {
               style={{
                 width: 38,
                 height: 38,
-                // borderRadius: 50,
+                 borderRadius: 50,
               }}
-              // borderRadius={50}
+               borderRadius={50}
 
               source={item.logo ? { uri: item.logo } : require("../assets/userImage.png")}
               loadingStyle={{ size: 'large', color: 'blue' }}
               placeholderStyle={{
                 width: 38,
                 height: 38,
-                // borderRadius: 50,
+                 borderRadius: 50,
               }}
               resizeMode='contain'
             />
@@ -470,7 +470,7 @@ const DealsDetailScreen = (props) => {
           style={{
             flex: 1,
             backgroundColor: "#fff",
-            // height: height > 800 ? height * 0.59 : height * 0.62,
+             height: height > 800 ? height * 0.59 : height * 0.62,
             paddingBottom: 20,
             marginTop: 15,
             borderRadius: 25,
@@ -487,14 +487,14 @@ const DealsDetailScreen = (props) => {
               <ImageLoad
                 style={{
                   flex: 1,
-                  // height: '40%',
+                   height: '40%',
                   backgroundColor: 'white',
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
                 }}
                 placeholderStyle={{
                   flex: 1,
-                  // height: '40%',
+                   height: '40%',
                   backgroundColor: 'white',
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
@@ -840,7 +840,7 @@ const DealsDetailScreen = (props) => {
         >
           <View style={{
             flexDirection: 'row',
-            // alignSelf: "center",
+             alignSelf: "center",
             marginBottom: 10,
             borderRadius: 8,
             height: height * 0.05,
@@ -889,7 +889,7 @@ const DealsDetailScreen = (props) => {
           justifyContent: 'space-between',
           alignItems: 'flex-start',
           width: wp("90%"),
-          // marginLeft: wp("5%"),
+           marginLeft: wp("5%"),
           marginTop: Platform.OS === "ios" ? hp("5%") : hp("3%"),
         }}>
 
@@ -1034,7 +1034,7 @@ const styles = StyleSheet.create({
   },
   splash: {
     width: wp("100%"),
-    // height: height > 800 ? hp("18%") : hp("18%"),
+     height: height > 800 ? hp("18%") : hp("18%"),
     resizeMode: "cover",
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
@@ -1060,7 +1060,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     alignSelf: "center",
-    // marginTop: height > 800 ? 15 : 10,
+     marginTop: height > 800 ? 15 : 10,
     borderRadius: 8,
     height: height * 0.05,
     justifyContent: "center",

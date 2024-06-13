@@ -61,7 +61,7 @@ const Button = ({ title, onPress, containerStyle, buttonStyle, titleStyle, icon,
     borderRadius: 10,
     height: 30,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: 'black',
     shadowOpacity: 0.5,
@@ -175,10 +175,10 @@ const FundraiserMessageScreen = props => {
         paddingHorizontal: 20,
       }}>
         <View style={{
-          // paddingLeft: 20,
+           paddingLeft: 20,
           paddingTop: 15,
           height: 80,
-          // alignItems: 'center',
+           alignItems: 'center',
         }}>
           <View style={{
             flexDirection: 'row',
@@ -244,7 +244,7 @@ const FundraiserMessageScreen = props => {
 
   const renderPrize = (prize, prizeIndex) => {
 
-    // console.log('renderprize', prize.selected_option)
+     console.log('renderprize', prize.selected_option)
 
     const imageStyle = {
       flex: 1,
@@ -333,9 +333,9 @@ const FundraiserMessageScreen = props => {
       return null
     }
 
-    // const myDetail = _.find(_.flatMap(fundraiser.leaderboard, 'detail'), { id: user.id })
-    // const myProgress = myDetail ?
-    //   _.sumBy(myDetail.customers, c => c.is_refunded ? 0 : c.quantity) : 0
+     const myDetail = _.find(_.flatMap(fundraiser.leaderboard, 'detail'), { id: user.id })
+     const myProgress = myDetail ?
+       _.sumBy(myDetail.customers, c => c.is_refunded ? 0 : c.quantity) : 0
 
     const progressValue = Number(fundraiser.current)
     const progressMax = Number(fundraiser.card_goal)
@@ -395,7 +395,7 @@ const FundraiserMessageScreen = props => {
                   style={{
                     width: 40,
                     height: 40,
-                    // borderRadius: 15,
+                     borderRadius: 15,
                     marginRight: 10,
                     alignSelf: "center",
                     backgroundColor: '#ccc'
@@ -456,7 +456,7 @@ const FundraiserMessageScreen = props => {
               borderRadius: 25,
               height: 30,
               backgroundColor: Theme.redButtonColor,
-              // width: "50%",
+               width: "50%",
               paddingHorizontal: 25,
             }}>
               <Text style={{

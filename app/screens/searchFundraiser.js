@@ -27,7 +27,7 @@ const SearchFundraiserScreen = props => {
 
   const [firstName, setFirstName] = useState(props.route.params?.firstName || '')
   const [lastName, setLastName] = useState(props.route.params?.lastName || '')
-  // const [role, setRole] = useState('Player')
+   const [role, setRole] = useState('Player')
   const [password, setPassword] = useState('')
 
   const [submitting, setSubmitting] = useState(false)
@@ -48,7 +48,7 @@ const SearchFundraiserScreen = props => {
     setSelected(team)
     setSelectedTeam(null)
     setPassword('')
-    // setRole('Player')
+     setRole('Player')
     setPasswordFormVisible(true)
   }
 
@@ -131,11 +131,11 @@ const SearchFundraiserScreen = props => {
         resp.data?.sharelink && AsyncStorage.setItem("@sharelink", JSON.stringify(resp.data?.sharelink));
         resp.data?.leaderboard && AsyncStorage.setItem("@leaderboard", JSON.stringify(resp.data?.leaderboard));
 
-        // props.navigation.navigate({
-        //   name: 'userFundraiser',
-        //   params: { refresh: moment().toISOString() },
-        //   merge: true
-        // })
+         props.navigation.navigate({
+           name: 'userFundraiser',
+           params: { refresh: moment().toISOString() },
+           merge: true
+         })
         props.navigation.goBack()
       } else {
 
@@ -397,7 +397,7 @@ const SearchFundraiserScreen = props => {
       <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // marginTop: 25,
+         marginTop: 25,
       }}>
         <TouchableOpacity
           style={{ flex: 1 }}
@@ -499,10 +499,10 @@ const SearchFundraiserScreen = props => {
     <View
       style={{
         height: 0.5,
-        // width: '100%',
+         width: '100%',
         flex: 1,
         backgroundColor: "lightgrey",
-        // alignSelf: "center",
+         alignSelf: "center",
         marginHorizontal: 30
       }}
     />
@@ -583,7 +583,7 @@ const SearchFundraiserScreen = props => {
             style={{
               width: wp("100%"),
               resizeMode: "cover",
-              // height: hp("18%"),
+               height: hp("18%"),
               borderBottomLeftRadius: 15,
               borderBottomRightRadius: 15,
               paddingBottom: 20
@@ -631,7 +631,7 @@ const SearchFundraiserScreen = props => {
                   backgroundColor: 'white',
                   paddingHorizontal: 15,
                   paddingVertical: 10,
-                  // marginRight: 10,
+                   marginRight: 10,
                   fontSize: 18,
                   fontFamily: 'Nunito-Regular',
                   borderRadius: 8,

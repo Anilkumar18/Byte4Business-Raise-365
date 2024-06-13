@@ -70,7 +70,7 @@ const Button = ({
     borderRadius: 10,
     height: 30,
     backgroundColor: Theme.redButtonColor,
-    // width: "100%",
+     width: "100%",
     flex: 1,
     shadowColor: "black",
     shadowOpacity: 0.5,
@@ -248,7 +248,7 @@ const QRCodeModal = ({ visible, userTeam, sharelink, onClose }) => {
             borderRadius: 15,
             backgroundColor: "white",
             paddingVertical: 20,
-            // alignItems: 'center',
+             alignItems: 'center',
             justifyContent: "center",
           }}
         >
@@ -292,7 +292,7 @@ const QRCodeModal = ({ visible, userTeam, sharelink, onClose }) => {
 };
 
 const UserFundraiserScreen = (props) => {
-  // const user = props?.route?.params?.user
+//   const user = props?.route?.params?.user
   const refresh = props?.route?.params?.refresh;
 
   const [data, setData] = useState(null);
@@ -485,22 +485,22 @@ const UserFundraiserScreen = (props) => {
       const base64Data = await resp.readFile("base64");
 
       const fileContent = `data:image/png;base64,${base64Data}`;
-      // console.log(fileContent);
+       console.log(fileContent);
       setPreparingShareContent(false);
 
       if (userId) {
-        // extraApiService.shareCount({
-        //   user_id: userId,
-        //   fundraiser_type_id: team,
-        //   category_id: 0,
-        //   page_type: 'share'
-        // })
-        //   .then(data => {
-        //     console.log('share count success', data)
-        //   })
-        //   .catch(error => {
-        //     console.log('share count error', error);
-        //   })
+         extraApiService.shareCount({
+           user_id: userId,
+           fundraiser_type_id: team,
+           category_id: 0,
+           page_type: 'share'
+         })
+           .then(data => {
+             console.log('share count success', data)
+           })
+           .catch(error => {
+             console.log('share count error', error);
+           })
 
         const createSessionResponse = await extraApiService.createSharingSession(
           {
@@ -780,14 +780,14 @@ const UserFundraiserScreen = (props) => {
       return null;
     }
 
-    // const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
-    // const myDetail = _.find(myTeam?.detail, { id: user?.id })
+     const myTeam = _.find(fundraiser.leaderboard, team => _.find(team.detail, { id: user?.id }))
+     const myDetail = _.find(myTeam?.detail, { id: user?.id })
 
-    // const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
-    // const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
+     const progressValue = !fundraiser.show_dollar_amount ? myDetail?.quantity : myDetail?.sum
+     const progressMax = (!fundraiser.show_dollar_amount || fundraiser.template == 'Donation Campaign') ? Number(myTeam?.plan) : Number(myTeam?.plan) * Number(fundraiser.price)
 
-    const progressValue = Number(fundraiser.current);
-    const progressMax = Number(fundraiser.card_goal);
+//    const progressValue = Number(fundraiser.current);
+//    const progressMax = Number(fundraiser.card_goal);
 
     return (
       <ProgressBar
@@ -821,7 +821,7 @@ const UserFundraiserScreen = (props) => {
           style={{
             width: 40,
             height: 40,
-            // borderRadius: 15,
+             borderRadius: 15,
             marginRight: 10,
             alignSelf: "center",
             backgroundColor: "#ccc",

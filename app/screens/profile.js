@@ -59,65 +59,53 @@ const ProfileScreen = (props) => {
   const [uploading, setUploading] = useState(false);
   const [token, setToken] = useState(false);
   const [avatar, setAvatar] = useState(null);
-  // const [serverImage, setServerImage] = useState(null);
-  // const [team, setTeam] = useState(null)
-  // const [selectedTeam, setSelectedTeam] = useState(null)
-  // const [sharelink, setShareLink] = useState('')
+   const [serverImage, setServerImage] = useState(null);
+   const [team, setTeam] = useState(null)
+   const [selectedTeam, setSelectedTeam] = useState(null)
+   const [sharelink, setShareLink] = useState('')
 
-  // const [teams, setTeams] = useState([])
-  // const [preparingShareContent, setPreparingShareContent] = useState(false)
-  // const [qrCodeVisible, setQrCodeVisible] = useState(false)
-  // const [error, setError] = useState(false)
+   const [teams, setTeams] = useState([])
+   const [preparingShareContent, setPreparingShareContent] = useState(false)
+   const [qrCodeVisible, setQrCodeVisible] = useState(false)
+   const [error, setError] = useState(false)
 
   let birthdayRef = React.createRef();
 
   const USER_KEY = "USER";
   const USER_TOKEN = "TOKEN";
+useEffect(() => {
+  (async () => {
+    try {
+      const token = await AsyncStorage.getItem(USER_TOKEN);
+      console.log("token", token);
+      const userfirst_name = await AsyncStorage.getItem("@first_name");
+      const userlast_name = await AsyncStorage.getItem("@last_name");
+      const username = await AsyncStorage.getItem("@username");
+      const email = await AsyncStorage.getItem("@email");
+      const userbirthday = await AsyncStorage.getItem("@birthday");
+      const userzip = await AsyncStorage.getItem("@zip");
+      const userphone = await AsyncStorage.getItem("@phone");
+      const userimage = await AsyncStorage.getItem("@picture");  // Retrieve from AsyncStorage
 
-  useEffect(() => {
-    (async () => {
+      console.log("userImage", userimage);
+      setAvatar(JSON.parse(userimage));  // Set the retrieved image URI
+      console.log(userfirst_name);
+      setFirstName(JSON.parse(userfirst_name));
+      setLastName(JSON.parse(userlast_name));
+      setUsername(JSON.parse(username));
+      setEmail(JSON.parse(email));
+      setBirthday(JSON.parse(userbirthday));
+      setZipCode(JSON.parse(userzip));
+      setPhone(JSON.parse(userphone));
+      setToken(JSON.parse(token));
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.error("Error loading profile data", error);
+    }
+  })();
+}, []);
 
-      try {
-        const token = await AsyncStorage.getItem(USER_TOKEN);
-        console.log("token", token)
-        const userfirst_name = await AsyncStorage.getItem("@first_name");
-        const userlast_name = await AsyncStorage.getItem("@last_name");
-        const username = await AsyncStorage.getItem("@username");
-        const email = await AsyncStorage.getItem("@email");
-        const userbirthday = await AsyncStorage.getItem("@birthday");
-        const userzip = await AsyncStorage.getItem("@zip");
-        const userphone = await AsyncStorage.getItem("@phone");
-        const userimage = await AsyncStorage.getItem("@picture");
-        // const team = await AsyncStorage.getItem("@fundraiser_type_id");
-        // const sharelink = await AsyncStorage.getItem('@sharelink')
-
-        console.log("userImage", userimage)
-        setAvatar(JSON.parse(userimage));
-        console.log(userfirst_name);
-        setFirstName(JSON.parse(userfirst_name));
-        setLastName(JSON.parse(userlast_name));
-        setUsername(JSON.parse(username));
-        setEmail(JSON.parse(email));
-        setBirthday(JSON.parse(userbirthday));
-        setZipCode(JSON.parse(userzip));
-        setPhone(JSON.parse(userphone));
-        // setTeam(JSON.parse(team));
-        // setSelectedTeam(JSON.parse(team));
-        setToken(JSON.parse(token));
-        // setShareLink(JSON.parse(sharelink));
-
-        // const resp = await extraApiService.getAllFundraiserGroups()
-        // console.log('extraApiService.searchFundraiser response', resp.data)
-        // setTeams(resp.data)
-
-        setLoading(false);
-      }
-      catch (error) {
-        setLoading(false);
-        utils.checkAuthorized(error, props.navigation)
-      }
-    })();
-  }, []);
 
   const signUpError = (message) => {
     setLoading(false);
@@ -155,9 +143,9 @@ const ProfileScreen = (props) => {
         last_name: lastName,
         zip: zipCode,
         birthday: birthday,
-        // username: username,
+         username: username,
         phone: phone,
-        // fundraiser_type_id: selectedTeam
+         fundraiser_type_id: selectedTeam
       }
 
       console.log("payload", creds)
@@ -167,7 +155,7 @@ const ProfileScreen = (props) => {
       let data = resp.data
       if (data.status === "success") {
         setLoading(false);
-        // setTeam(selectedTeam)
+         setTeam(selectedTeam)
         console.log("Update Profile Responce: ", data);
         showMessage({
           message: "Your profile has been updated.",
@@ -175,14 +163,14 @@ const ProfileScreen = (props) => {
         });
 
         // !! READ ONLY !!
-        // AsyncStorage.setItem("@username", JSON.stringify(username));
+         AsyncStorage.setItem("@username", JSON.stringify(username));
         AsyncStorage.setItem("@phone", JSON.stringify(phone));
-
+        AsyncStorage.setItem("@picture", JSON.stringify(avatar));
         AsyncStorage.setItem("@first_name", JSON.stringify(firstName));
         AsyncStorage.setItem("@last_name", JSON.stringify(lastName));
         AsyncStorage.setItem("@zip", JSON.stringify(zipCode));
         AsyncStorage.setItem("@birthday", JSON.stringify(birthday));
-        // AsyncStorage.setItem("@fundraiser_type_id", JSON.stringify(selectedTeam));
+         AsyncStorage.setItem("@fundraiser_type_id", JSON.stringify(selectedTeam));
         AsyncStorage.setItem("@sharelink", JSON.stringify(data.sharelink));
         AsyncStorage.setItem("@leaderboard", JSON.stringify(data.leaderboard));
       }
@@ -348,7 +336,7 @@ const ProfileScreen = (props) => {
         rounded
         size={width * 0.2}
         source={{ uri: avatar ? avatar : undefined }}
-        title={(firstName || lastName) && utils.getInitials(`${firstName} ${lastName}`)}
+        title={(firstName || lastName) && utils.getInitials(`${firstName} ${lastName} ${avatar}`)}
         containerStyle={{
           backgroundColor: 'darkgray',
         }}
@@ -359,7 +347,7 @@ const ProfileScreen = (props) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.select({ ios: 'padding', android: undefined })}
-      // keyboardVerticalOffset={20}
+       keyboardVerticalOffset={20}
       style={styles.container}
     >
       <TouchableWithoutFeedback
@@ -517,7 +505,7 @@ const ProfileScreen = (props) => {
               </View>
               <View style={{
                 ...styles.inputContainer,
-                // backgroundColor: 'lightgray'
+                 backgroundColor: 'lightgray'
               }}>
                 <TextInputMask
                   type='custom'
@@ -529,7 +517,7 @@ const ProfileScreen = (props) => {
                   autoCapitalize="none"
                   keyboardType='numeric'
                   placeholderTextColor="grey"
-                // editable={false}
+                 editable={false}
                 />
               </View>
 
@@ -579,8 +567,8 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
@@ -588,7 +576,7 @@ const styles = StyleSheet.create({
     height: hp("70%"),
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
-    //paddingBottom: 50,
+    paddingBottom: 50,
   },
   inputStyle: {
     paddingLeft: 13,

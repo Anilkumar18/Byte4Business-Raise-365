@@ -331,9 +331,9 @@ const FundRaiserScreen = (props) => {
                 style={{
                   fontSize: height * 0.032,
                   fontFamily: "Nunito-Bold",
-                  // position: "absolute",
-                  // top: height * 0.12,
-                  // left: 20,
+                   position: "absolute",
+                   top: height * 0.12,
+                   left: 20,
                   color: "#fff",
                 }}
               > Local Fundraisers </Text>
@@ -387,15 +387,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   dropdwonSection: {
-    // height: 115,
+     height: 115,
     alignSelf: "center",
     marginTop: 13,
     width: wp("93%"),
     borderRadius: 10,
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   infoText: {
     fontFamily: 'Nunito-Regular',

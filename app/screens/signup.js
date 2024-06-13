@@ -66,14 +66,14 @@ const SignUpScreen = (props) => {
       return false;
     }
 
-    // if (!!birthday) {
-    //   if (birthday.length < 10 || !birthdayRef.current.isValid()) {
-    //     console.log("Birth date is invalid");
-    //     setLoading(false);
-    //     showMessage({ message: "Birth date is invalid", type: "danger" });
-    //     return false;
-    //   }
-    // }
+     if (!!birthday) {
+       if (birthday.length < 10 || !birthdayRef.current.isValid()) {
+         console.log("Birth date is invalid");
+         setLoading(false);
+         showMessage({ message: "Birth date is invalid", type: "danger" });
+         return false;
+       }
+     }
 
     return true;
   };
@@ -136,8 +136,8 @@ const SignUpScreen = (props) => {
       phone: phone,
       email: email,
       password: password,
-      // zip: zipCode,
-      // birthday: birthday,
+       zip: zipCode,
+       birthday: birthday,
     }
 
     console.log("resprttt", creds)
@@ -255,7 +255,7 @@ const SignUpScreen = (props) => {
               placeholder="Last Name"
               value={lastName}
               autoCapitalize="none"
-              // autoFocus={true}
+               autoFocus={true}
               blurOnSubmit={false}
               // @ts-ignore
               onSubmitEditing={() => phoneRef.current?.getElement().focus()}
@@ -266,7 +266,7 @@ const SignUpScreen = (props) => {
               }}
             />
           </View>
-          {/* <View style={styles.inputContainer}>
+          { <View style={styles.inputContainer}>
             <TextInput
               ref={usernameRef}
               style={styles.inputStyle}
@@ -283,7 +283,7 @@ const SignUpScreen = (props) => {
                 setUsername(text);
               }}
             />
-          </View> */}
+          </View> }
 
           <View style={styles.inputContainer}>
             <TextInputMask
@@ -381,7 +381,7 @@ const SignUpScreen = (props) => {
                 onPress={() => {
                   setHidePassword(false);
                 }}
-                // style={{ position: "absolute", right: 14, top: 12 }}
+                 style={{ position: "absolute", right: 14, top: 12 }}
                 name="eye-outline"
                 color="#000"
                 size={20}
@@ -391,7 +391,7 @@ const SignUpScreen = (props) => {
                 onPress={() => {
                   setHidePassword(true);
                 }}
-                // style={{ position: "absolute", right: 12, top: 12 }}
+                 style={{ position: "absolute", right: 12, top: 12 }}
                 name="eye-off-outline"
                 color="#000"
                 size={20}
@@ -416,7 +416,7 @@ const SignUpScreen = (props) => {
               justifyContent: 'center'
             }}>
               <CheckBox
-                // style={styles.checkbox}
+                 style={styles.checkbox}
                 onClick={() => setJoinTeamChecked(!joinTeamChecked)}
                 isChecked={joinTeamChecked}
                 checkedCheckBoxColor="#000"
@@ -507,11 +507,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: '#bcbfc2',
-    // paddingBottom: hp("5%")
+     paddingBottom: hp("5%")
   },
   logo: {
-    //position: "absolute",
-    //top: hp("30%"),
+    position: "absolute",
+    top: hp("30%"),
   },
   viewBack: {
     backgroundColor: "#fff",
@@ -519,10 +519,10 @@ const styles = StyleSheet.create({
     width: "100%",
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
-    //paddingBottom: 50,
+    paddingBottom: 50,
   },
   inputStyle: {
-    // paddingLeft: 13,
+     paddingLeft: 13,
     marginHorizontal: 10,
 
     color: "#051533",
@@ -539,8 +539,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 15,
-    // borderTopLeftRadius: 8,
-    // borderTopRightRadius: 8,
+     borderTopLeftRadius: 8,
+     borderTopRightRadius: 8,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Theme.redButtonColor,
@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: 'center',
     flexDirection: 'row',
-    // height: 40,
+     height: 40,
     backgroundColor: "#ececec",
     width: "85%",
   },

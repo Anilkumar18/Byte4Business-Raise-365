@@ -42,7 +42,7 @@ const MerchantDetailScreen = (props) => {
   const unread = data ? data.unread_message_count : 0
 
   useEffect(() => {
-    // setData(props.route.params.data)
+     setData(props.route.params.data)
     loadData()
     addViewCount()
     const timerId = setInterval(() => updateCurrentTime(), 1000)
@@ -128,7 +128,7 @@ const MerchantDetailScreen = (props) => {
   const media = data ? _.first(data.photos) : null
   const isVideo = media && media.is_video && media.url
   const isOpen = isOpenNow()
-  // console.log('when we serve you', JSON.stringify(data?.hours_of_operation), currentTime.format('hh:mm A'));
+   console.log('when we serve you', JSON.stringify(data?.hours_of_operation), currentTime.format('hh:mm A'));
 
   if (loading) {
     return (
@@ -279,7 +279,7 @@ const MerchantDetailScreen = (props) => {
                     style={{
                       fontFamily: "Nunito-Bold",
                       fontSize: 16,
-                      // color: "#fff",
+                       color: "#fff",
                       color: 'black',
                       textAlign: "center",
                     }}
@@ -776,7 +776,7 @@ const MerchantDetailScreen = (props) => {
                 backgroundColor: "lightgrey",
                 marginTop: height * 0.11,
                 borderTopLeftRadius: 25,
-                // marginBottom: Platform.OS === "android" ? 30 : 0,
+                 marginBottom: Platform.OS === "android" ? 30 : 0,
                 paddingBottom: Platform.OS === "android" ? 60 : 0,
                 paddingTop: Platform.OS === "android" ? 10 : 0,
                 justifyContent: "center",
@@ -889,9 +889,9 @@ const styles = StyleSheet.create({
   viewBack: {
     backgroundColor: "#fff",
     flex: 1,
-    // paddingBottom: height * 0.05,
-    // bottom: height * 0.05,
-    // height: height * 0.75,
+     paddingBottom: height * 0.05,
+     bottom: height * 0.05,
+     height: height * 0.75,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
   },
